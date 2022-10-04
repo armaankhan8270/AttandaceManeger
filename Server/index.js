@@ -3,7 +3,16 @@ const app = express();
 import mongoose from "mongoose";
 import cors from "cors";
 import UserRouter from "./Routes/User.js";
+import bodyParser from "body-parser";
+
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
+// app.use("/public", express.static("public"));
 
 app.use(cors());
 
@@ -21,12 +30,12 @@ mongoose.connection.on("disconnected", () => {
 });
 //Midalware
 app.use((err, req, res, next) => {
-  return res.json(err);
+  return res.json("there is error" + err);
 });
 
 //Routes
-app.use("/user", UserRouter);
 
+app.use("/user", UserRouter);
 app.listen(3002, (req, res) => {
   console.log("server is running on 3001");
 });

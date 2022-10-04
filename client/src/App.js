@@ -5,6 +5,8 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import Navbars from "./Components/Navbar";
 import Index from "./Components/Profile";
+import Foote from "./Components/Foote";
+import Faq from "./Components/Faq";
 
 function App() {
   return (
@@ -14,10 +16,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Profile" element={<Index />} />
+        <Route path="/profile" element={<Index />} />
+        <Route path="/faq" element={<Faq />} />
 
         {/* <Route path="/nav" element={<Navbar />} /> */}
       </Routes>
+      <Foote />
     </BrowserRouter>
   );
 }

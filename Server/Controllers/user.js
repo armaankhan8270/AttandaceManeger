@@ -1,6 +1,8 @@
 import User from "../Models/User.js";
 import bcrypt from "bcryptjs";
-// import jwt from "jsonwebtoken";
+import multer from "multer";
+import mongoose from "mongoose";
+import uuid4 from "uuidv4";
 export const Resgister = async (req, res, next) => {
   //code for hasing password
   const salt = bcrypt.genSaltSync(10);
@@ -14,7 +16,7 @@ export const Resgister = async (req, res, next) => {
     await newUser.save();
     res.send(req.body);
   } catch (err) {
-    next(err.message);
+    next(err.message.data);
   }
 };
 export const GetAllResgister = async (req, res, next) => {
@@ -27,7 +29,7 @@ export const GetAllResgister = async (req, res, next) => {
 };
 export const Login = async (req, res, next) => {
   try {
-    const user = await User.findOne({ username: req.body.username });
+    const user = await User.findOne({ email: req.body.email });
     if (!user) return next("User not found!Pleae Check Your Username");
 
     const isPasswordCorrect = await bcrypt.compare(
@@ -39,10 +41,10 @@ export const Login = async (req, res, next) => {
         "Wrong password or username!If You Are New Please SignUp first"
       );
     const { password, username } = user;
-    const token = jwt.sign(
-      { id: user._id, isAdmin: user.isAdmin },
-      "armaankhan"
-    );
+    // const token = jwt.sign(
+    //   { id: user._id, isAdmin: user.isAdmin },
+    //   "armaankhan"
+    // );
     res
       //   .cookie("access_token", token, { httpOnly: true })
       //   .status(201)
