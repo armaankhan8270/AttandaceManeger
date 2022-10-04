@@ -25,9 +25,9 @@ const Login = () => {
     }, 2000);
   };
   return (
-    <div className="bg-[#595b86]   pt-0 lg:py-12">
+    <div className="bg-white   pt-0 lg:py-12">
       {err ? <Error error={"check your username or password"} /> : ""}
-      {/* {success ? <Success message={"loginned successfully"} /> : ""} */}
+      {success ? <Success m={"loginned successfully"} /> : ""}
       <div class="bg-gray-300 mt-4 w-full max-w-sm mx-auto overflow-hidden rounded-lg shadow-md dark:bg-gray-800">
         <div class="px-6 py-4">
           <h2 class="text-3xl font-bold text-center text-gray-900  dark:text-white">
@@ -90,7 +90,7 @@ const Login = () => {
           </span>
 
           <a
-            href="#"
+            href="register"
             class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
           >
             Register
