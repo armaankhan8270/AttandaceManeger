@@ -12,7 +12,7 @@ export const AddAttandance = async (req, res, next) => {
   }
 };
 export const AllEntry = async (req, res, next) => {
-  const Entry = await Attandance.find();
+  const Entry = await Attandance.find().sort({ _id: -1 });
   try {
     res.send(Entry);
   } catch (error) {
@@ -22,7 +22,9 @@ export const AllEntry = async (req, res, next) => {
 export const SearchByRoll = async (req, res, next) => {
   const rollNumber = req.query.roll;
   try {
-    const FindedRolls = await Attandance.find({ roll: rollNumber });
+    const FindedRolls = await Attandance.find({ roll: rollNumber }).sort({
+      _id: -1,
+    });
 
     res.json(FindedRolls);
   } catch (error) {}

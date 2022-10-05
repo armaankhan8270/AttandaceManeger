@@ -41,8 +41,12 @@ const AttandanceShhet = () => {
   const Poost = (e) => {};
 
   return (
-    <section className="lg:my-12">
-      {/* <form>
+    <div
+      className="
+    bg-[#243b55]   "
+    >
+      <section className="lg:py-20 lg:px-16  rounded shadow-md shadow-blue-gray-800">
+        {/* <form>
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -97,266 +101,267 @@ const AttandanceShhet = () => {
         </button>
       </form> */}
 
-      <button
-        onClick={() => setmodel(true)}
-        class="bg-gray-900  hover:bg-gray-400 text-gray-100 z-0 font-bold py-2 px-4 rounded inline-flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
+        <button
+          onClick={() => setmodel(true)}
+          class="bg-white   hover:bg-gray-800 text-gray-900 z-0 font-bold py-2 px-4 rounded inline-flex items-center"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
 
-        <span>Add</span>
-      </button>
+          <span>Add</span>
+        </button>
 
-      <div className="lg:mx-[33%] lg:my-12 shadow-gray-500 shadow-xl">
-        {model ? (
-          <div className="container shadow-inner flex items-center justify-center min-h-screen px-6 mx-auto">
-            <form className="w-full max-w-md">
-              <div className="relative flex items-center mt-8">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  value={day}
-                  onChange={(e) => setday(e.target.value)}
-                  className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="date"
-                />
-              </div>
-              <div className="relative flex items-center mt-8">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="number"
-                  value={roll}
-                  onChange={(e) => setroll(e.target.value)}
-                  className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Roll Number"
-                />
-              </div>
-              <div className="relative flex items-center mt-8">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  value={Ai}
-                  onChange={(e) => setAi(e.target.value)}
-                  className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Ai"
-                />
-              </div>
-              <div className="relative flex items-center mt-8">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  value={Dwm}
-                  onChange={(e) => setDwm(e.target.value)}
-                  className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Dwm"
-                />
-              </div>
+        <div className="lg:mx-[33%] lg:my-12 shadow-gray-500 shadow-xl">
+          {model ? (
+            <div className="container shadow-inner flex items-center justify-center min-h-screen px-6 mx-auto">
+              <form className="w-full max-w-md">
+                <div className="relative flex items-center mt-8">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={day}
+                    onChange={(e) => setday(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="date"
+                  />
+                </div>
+                <div className="relative flex items-center mt-8">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="number"
+                    value={roll}
+                    onChange={(e) => setroll(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Roll Number"
+                  />
+                </div>
+                <div className="relative flex items-center mt-8">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={Ai}
+                    onChange={(e) => setAi(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Ai"
+                  />
+                </div>
+                <div className="relative flex items-center mt-8">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={Dwm}
+                    onChange={(e) => setDwm(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Dwm"
+                  />
+                </div>
 
-              <div className="relative flex items-center mt-6">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  value={Wc}
-                  onChange={(e) => setWc(e.target.value)}
-                  className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Wc"
-                />
-              </div>
-              <div className="relative flex items-center mt-4">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="Cn"
-                  value={Cn}
-                  onChange={(e) => setCn(e.target.value)}
-                  className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Cn"
-                />
-              </div>
-              <div className="relative flex items-center mt-4">
-                <span className="absolute">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                </span>
-                <input
-                  type="text"
-                  value={Stats}
-                  onChange={(e) => setStats(e.target.value)}
-                  className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Stats"
-                />
-              </div>
+                <div className="relative flex items-center mt-6">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={Wc}
+                    onChange={(e) => setWc(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Wc"
+                  />
+                </div>
+                <div className="relative flex items-center mt-4">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="Cn"
+                    value={Cn}
+                    onChange={(e) => setCn(e.target.value)}
+                    className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Cn"
+                  />
+                </div>
+                <div className="relative flex items-center mt-4">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={Stats}
+                    onChange={(e) => setStats(e.target.value)}
+                    className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Stats"
+                  />
+                </div>
 
-              <div className="mt-6">
-                <button
-                  onClick={Post}
-                  className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                >
-                  Add
-                </button>
-              </div>
-            </form>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-      <table class="t">
-        <thead>
-          <tr className="border-2 min-w-screen justify-between border-gray-800">
-            <th className="bg-cyan-700">RollNo</th>
-            <th className="bg-cyan-600">Date</th>
-            <th className="bg-cyan-500">Ai</th>
-            <th className="bg-cyan-400">Dwm</th>
-            <th className="bg-cyan-300">Wc</th>
-            <th className="bg-cyan-200">Stats</th>
-            <th>Cn</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Data?.map((item, ind) => {
-            return (
-              <tr className="text-white">
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
-                  {item.roll}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-400">
-                  {item.day}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-300">
-                  {item.Ai}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-700">
-                  {item.Dwm}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-600">
-                  {item.Wc}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
-                  {item.Cn}
-                </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
-                  {item.Stats}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </section>
+                <div className="mt-6">
+                  <button
+                    onClick={Post}
+                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                  >
+                    Add
+                  </button>
+                </div>
+              </form>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+        <table class="t">
+          <thead className="h-10 rounded-lg text-white font-extrabold lg:text-sm">
+            <tr className="border-2  p  min-w-screen justify-between border-gray-800">
+              <th className="bg-indigo-900">RollNo </th>
+              <th className="bg-indigo-900">Date</th>
+              <th className="bg-indigo-900">Ai</th>
+              <th className="bg-indigo-900">Dwm</th>
+              <th className="bg-indigo-900">Wc</th>
+              <th className="bg-indigo-900">Stats</th>
+              <th className="bg-indigo-900">Cn</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Data?.map((item, ind) => {
+              return (
+                <tr className="text-white">
+                  <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                    {item.roll}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                    {item.day}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                    {item.Ai}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                    {item.Dwm}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                    {item.Wc}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                    {item.Cn}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                    {item.Stats}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    </div>
   );
 };
 

@@ -80,7 +80,7 @@ export default function Navbars() {
         </Link>
 
         <div className="hidden lg:block">{navList}</div>
-        <Link to="/profile">
+        <Link to="/search">
           <Button
             variant="gradient"
             size="sm"
@@ -130,7 +130,7 @@ export default function Navbars() {
       <MobileNav open={openNav}>
         {navList}
         <Button variant="gradient" size="sm" fullWidth className="mb-2">
-          <span>Buy Now</span>
+          <span>Search Yours</span>
         </Button>
       </MobileNav>
     </Navbar>
