@@ -9,6 +9,7 @@ import Foote from "./Components/Foote";
 import Faq from "./Components/Faq";
 import About from "./Components/About";
 import AttandanceShhet from "./Components/AttandanceShhet";
+import SearchByroll from "./Components/SearchByroll";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/about" element={<About />} />
           <Route path="/attendance" element={<AttandanceShhet />} />
+          <Route path="/search" element={<SearchByroll />} />
 
           {/* <Route path="/nav" element={<Navbar />} /> */}
         </Routes>
