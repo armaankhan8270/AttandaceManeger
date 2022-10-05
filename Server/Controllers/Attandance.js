@@ -19,3 +19,11 @@ export const AllEntry = async (req, res, next) => {
     next(err.message.data);
   }
 };
+export const SearchByRoll = async (req, res, next) => {
+  const rollNumber = req.query.roll;
+  try {
+    const FindedRolls = await Attandance.find({ roll: rollNumber });
+
+    res.json(FindedRolls);
+  } catch (error) {}
+};
