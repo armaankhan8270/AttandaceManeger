@@ -90,7 +90,7 @@ const Login = () => {
           </span>
 
           <a
-            href="register"
+            href="/register"
             class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
           >
             Register

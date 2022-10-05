@@ -3,18 +3,17 @@ const app = express();
 import mongoose from "mongoose";
 import cors from "cors";
 import UserRouter from "./Routes/User.js";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
+import AddRouter from "./Routes/Attandance.js";
 
 app.use(express.json());
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: false,
-  })
-);
+// app.use(bodyParser.json());
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
 // app.use("/public", express.static("public"));
-
-app.use(cors());
 
 //This Code Stuff IS related to connetion with backend
 const url =
@@ -32,10 +31,12 @@ mongoose.connection.on("disconnected", () => {
 app.use((err, req, res, next) => {
   return res.json("there is error" + err);
 });
+app.use(cors());
 
 //Routes
 
 app.use("/user", UserRouter);
+app.use("/attandance", AddRouter);
 app.listen(3002, (req, res) => {
   console.log("server is running on 3001");
 });
