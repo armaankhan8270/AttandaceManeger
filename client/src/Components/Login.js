@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Error from "./Error";
 import Success from "./Success";
+import { GlobalUserContetx } from "../Context/UserContext";
 
 const Login = () => {
+  const { UserLogin, setUserLogin, UserLogout, setUserLogout } =
+    GlobalUserContetx();
   const [err, seterr] = useState(false);
   const [success, setsuccess] = useState(false);
   const [email, setemail] = useState("");
@@ -17,8 +20,10 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         setsuccess(true);
+        setUserLogin(true);
       })
       .catch((e) => seterr(true));
+    setUserLogin(false);
     setTimeout(() => {
       setsuccess(false);
       seterr(false);
