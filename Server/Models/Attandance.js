@@ -4,6 +4,9 @@ const AttandanceSchema = new mongoose.Schema(
     roll: {
       type: Number,
     },
+    NameOfUser: {
+      type: String,
+    },
     Ai: {
       type: String,
       required: true,
@@ -22,6 +25,10 @@ const AttandanceSchema = new mongoose.Schema(
       required: true,
     },
     Stats: {
+      type: String,
+      required: true,
+    },
+    Bce: {
       type: String,
       required: true,
     },

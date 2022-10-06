@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const SearchByroll = () => {
   const [Data, setData] = useState([]);
   const [update, setupdate] = useState(0);
-  const [SearchRoll, setSearchRoll] = useState(23);
+  const [SearchRoll, setSearchRoll] = useState(18);
   useEffect(() => {
     const getData = async () => {
       const geturl = `http://localhost:3002/attandance/byroll?roll=${SearchRoll}`;
@@ -65,12 +65,13 @@ const SearchByroll = () => {
             <th className="bg-indigo-900">Wc</th>
             <th className="bg-indigo-900">Stats</th>
             <th className="bg-indigo-900">Cn</th>
+            <th className="bg-indigo-900">Bce</th>
           </tr>
         </thead>
         <tbody>
           {Data?.map((item, ind) => {
             return (
-              <tr className="text-white">
+              <tr key={ind} className="text-white">
                 <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                   {item.roll}
                 </td>
@@ -87,10 +88,13 @@ const SearchByroll = () => {
                   {item.Wc}
                 </td>
                 <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                  {item.Stats}
+                </td>
+                <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                   {item.Cn}
                 </td>
                 <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
-                  {item.Stats}
+                  {item.Bce}
                 </td>
               </tr>
             );

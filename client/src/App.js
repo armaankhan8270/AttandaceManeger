@@ -11,6 +11,7 @@ import About from "./Components/About";
 import AttandanceShhet from "./Components/AttandanceShhet";
 import SearchByroll from "./Components/SearchByroll";
 import { GlobalUserContetx } from "./Context/UserContext";
+import Help from "./Components/Help";
 
 function App() {
   const {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/profile" element={<Index />} />
           <Route path="/faq" element={UserLogin ? <Faq /> : <Login />} />
           <Route path="/about" element={<About />} />
+          <Route path="/help" element={<Help />} />
           <Route
             path="/attendance"
             element={UserLogin ? <AttandanceShhet /> : <Login />}

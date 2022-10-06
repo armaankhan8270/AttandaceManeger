@@ -1,18 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { GlobalUserContetx } from "../Context/UserContext";
 
 const AttandanceShhet = () => {
   const [model, setmodel] = useState(false);
   const [day, setday] = useState("");
   const [Ai, setAi] = useState("");
   const [Dwm, setDwm] = useState("");
+  const [Bce, setBce] = useState("");
   const [Wc, setWc] = useState("");
   const [Cn, setCn] = useState("");
   const [roll, setroll] = useState();
   const [Stats, setStats] = useState("");
   const [Data, setData] = useState([]);
   const [update, setupdate] = useState(0);
-  const AttandanceData = { roll, day, Ai, Dwm, Cn, Wc, Stats };
+  const { NameOfUser } = GlobalUserContetx();
+  const AttandanceData = { roll, day, Ai, Dwm, Cn, Wc, Stats, Bce, NameOfUser };
   useEffect(() => {
     const getData = async () => {
       const geturl = `http://localhost:3002/attandance/All`;
@@ -33,6 +36,7 @@ const AttandanceShhet = () => {
       .post(url, AttandanceData)
       .then((e) => {
         console.log(e);
+        setupdate(update + 1);
       })
       .catch((e) => {
         console.log(e.response.data);
@@ -227,6 +231,31 @@ const AttandanceShhet = () => {
                     placeholder="Dwm"
                   />
                 </div>
+                <div className="relative flex items-center mt-8">
+                  <span className="absolute">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    value={Bce}
+                    onChange={(e) => setBce(e.target.value)}
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-white text-black dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                    placeholder="Bce"
+                  />
+                </div>
 
                 <div className="relative flex items-center mt-6">
                   <span className="absolute">
@@ -304,12 +333,18 @@ const AttandanceShhet = () => {
                   />
                 </div>
 
-                <div className="mt-6">
+                <div className="my-6  flex">
                   <button
                     onClick={Post}
-                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-black bg-white capitalize transition-colors duration-300 transform rounded-md hover:bg-white focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
                   >
                     Add
+                  </button>
+                  <button
+                    onClick={() => setmodel(false)}
+                    className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white bg-red-800 capitalize transition-colors duration-300 transform rounded-md  focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                  >
+                    Cancel
                   </button>
                 </div>
               </form>
@@ -321,6 +356,7 @@ const AttandanceShhet = () => {
         <table class="t">
           <thead className="h-10 rounded-lg text-white font-extrabold lg:text-sm">
             <tr className="border-2  p  min-w-screen justify-between border-gray-800">
+              <th className="bg-indigo-900">Usernmae </th>
               <th className="bg-indigo-900">RollNo </th>
               <th className="bg-indigo-900">Date</th>
               <th className="bg-indigo-900">Ai</th>
@@ -328,12 +364,16 @@ const AttandanceShhet = () => {
               <th className="bg-indigo-900">Wc</th>
               <th className="bg-indigo-900">Stats</th>
               <th className="bg-indigo-900">Cn</th>
+              <th className="bg-indigo-900">Bce</th>
             </tr>
           </thead>
           <tbody>
             {Data?.map((item, ind) => {
               return (
-                <tr className="text-white">
+                <tr key={ind} className="text-white">
+                  <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                    {item.NameOfUser}
+                  </td>
                   <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                     {item.roll}
                   </td>
@@ -350,10 +390,13 @@ const AttandanceShhet = () => {
                     {item.Wc}
                   </td>
                   <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
+                    {item.Stats}
+                  </td>
+                  <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                     {item.Cn}
                   </td>
                   <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
-                    {item.Stats}
+                    {item.Bce}
                   </td>
                 </tr>
               );

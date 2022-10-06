@@ -66,10 +66,10 @@ export default function Navbars() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal captalize capitalize"
+        className="p-1 font-normal"
       >
-        <Link to="/faq" className="flex items-center">
-          Welcome {NameOfUser}
+        <Link to="/help" className="flex items-center">
+          Help
         </Link>
       </Typography>
     </ul>
