@@ -20,9 +20,9 @@ export const AllEntry = async (req, res, next) => {
   }
 };
 export const SearchByRoll = async (req, res, next) => {
-  const rollNumber = req.query.roll;
+  const username = req.query.NameOfUser;
   try {
-    const FindedRolls = await Attandance.find({ roll: rollNumber }).sort({
+    const FindedRolls = await Attandance.find({ NameOfUser: username }).sort({
       _id: -1,
     });
 

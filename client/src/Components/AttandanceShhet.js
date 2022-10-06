@@ -49,7 +49,7 @@ const AttandanceShhet = () => {
       className="
     bg-[#243b55]   "
     >
-      <section className="lg:py-20 lg:px-16  rounded shadow-md shadow-blue-gray-800">
+      <section className="lg:py-20 lg:px-16 capitalize  rounded shadow-md shadow-blue-gray-800">
         {/* <form>
         <label
           for="default-search"
@@ -354,10 +354,10 @@ const AttandanceShhet = () => {
           )}
         </div>
         <table class="t">
-          <thead className="h-10 rounded-lg text-white font-extrabold lg:text-sm">
-            <tr className="border-2  p  min-w-screen justify-between border-gray-800">
-              <th className="bg-indigo-900">Usernmae </th>
-              <th className="bg-indigo-900">RollNo </th>
+          <thead className="h-10 rounded-lg text-white font-extrabold text-xs lg:text-sm">
+            <tr className="border-2 md:text-sm    lg:min-w-screen justify-between border-gray-800">
+              <th className="bg-indigo-900 text-xs">name </th>
+              <th className="bg-indigo-900">RNo </th>
               <th className="bg-indigo-900">Date</th>
               <th className="bg-indigo-900">Ai</th>
               <th className="bg-indigo-900">Dwm</th>
@@ -370,14 +370,14 @@ const AttandanceShhet = () => {
           <tbody>
             {Data?.map((item, ind) => {
               return (
-                <tr key={ind} className="text-white">
+                <tr key={ind} className="text-white lg:text-sm text-xs">
                   <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                     {item.NameOfUser}
                   </td>
                   <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                     {item.roll}
                   </td>
-                  <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                  <td className="lg:w-44  sm:w-5 p-3 border- border-0 shadow-sm bg-white text-black">
                     {item.day}
                   </td>
                   <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">

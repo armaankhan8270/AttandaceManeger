@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 const SearchByroll = () => {
   const [Data, setData] = useState([]);
   const [update, setupdate] = useState(0);
-  const [SearchRoll, setSearchRoll] = useState(18);
+  const [SearchRoll, setSearchRoll] = useState("user7");
   useEffect(() => {
     const getData = async () => {
-      const geturl = `http://localhost:3002/attandance/byroll?roll=${SearchRoll}`;
+      const geturl = `http://localhost:3002/attandance/byroll?NameOfUser=${SearchRoll}`;
       await axios.get(geturl).then((e) => {
         setData(e.data);
         console.log(e.data);
@@ -16,7 +16,7 @@ const SearchByroll = () => {
     getData();
   }, [update]);
   return (
-    <div className="lg:p-12 bg-gray-900">
+    <div className="lg:p-12 capitalize bg-gray-900">
       <div class="relative ">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg
@@ -57,7 +57,8 @@ const SearchByroll = () => {
       </div>
       <table class="t">
         <thead>
-          <tr className="border-2 text-white min-w-screen justify-between border-gray-800">
+          <tr className="border-2 text-sm text-white min-w-screen justify-between border-gray-800">
+            <th className="bg-indigo-900">username</th>
             <th className="bg-indigo-900">RollNo</th>
             <th className="bg-indigo-900">Date</th>
             <th className="bg-indigo-900">Ai</th>
@@ -71,7 +72,10 @@ const SearchByroll = () => {
         <tbody>
           {Data?.map((item, ind) => {
             return (
-              <tr key={ind} className="text-white">
+              <tr key={ind} className="text-white text-xs">
+                <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
+                  {item.NameOfUser}
+                </td>
                 <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                   {item.roll}
                 </td>

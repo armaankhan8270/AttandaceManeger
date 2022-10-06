@@ -141,9 +141,11 @@ export default function Navbars() {
       </div>
       <MobileNav open={openNav}>
         {navList}
-        <Button variant="gradient" size="sm" fullWidth className="mb-2">
-          <span>Search Yours</span>
-        </Button>
+        <Link to="search">
+          <Button variant="gradient" size="sm" fullWidth className="mb-2">
+            <span>Search Yours</span>
+          </Button>
+        </Link>
       </MobileNav>
     </Navbar>
   );

@@ -43,7 +43,7 @@ const Login = () => {
       <div class="bg-gray-300 mt-4 w-full max-w-sm mx-auto overflow-hidden rounded-lg shadow-md dark:bg-gray-800">
         <div class="px-6 py-4">
           <h2 class="text-3xl font-bold text-center text-gray-900  dark:text-white">
-            Brand
+            Heyy
           </h2>
 
           <h3 class="mt-1 text-xl font-medium text-center text-gray-600 dark:text-gray-200">
@@ -79,6 +79,7 @@ const Login = () => {
 
             <div class="flex items-center justify-between mt-4">
               <a
+                onClick={() => alert("Nikal Pahli Fursat Mai Nikal Yaha se ")}
                 href="#"
                 class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500"
               >
