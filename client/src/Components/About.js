@@ -1,16 +1,16 @@
 import React from "react";
-import img1 from "./Screenshot (285).png";
+import img1 from "./armaan1.jpeg";
 
 const About = () => {
   return (
     <div>
       <div class=" lg:mx-[33%] lg:mt-12 lg:mb-12 w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <img
-          class="object-cover object-center w-full h-56"
-          src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          class="object-cover object-start w-full h-72"
+          // src="https://images.unsplash.com/photo-1542156822-6924d1a71ace?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          src={img1}
           alt="avatar"
         />
-        {/* src={img1} */}
 
         <div class="flex items-center px-6 py-3 bg-gray-900">
           <svg
@@ -31,12 +31,11 @@ const About = () => {
 
         <div class="px-6 py-4">
           <h1 class="text-xl font-semibold text-gray-800 dark:text-white">
-            Patterson johnson
+            Armaan Khan
           </h1>
 
           <p class="py-2 text-gray-700 dark:text-gray-400">
-            Full Stack maker & UI / UX Designer , love hip hop music Author of
-            Building UI.
+            Full Stack Mern Developer
           </p>
 
           <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -54,7 +53,7 @@ const About = () => {
               />
             </svg>
 
-            <h1 class="px-2 text-sm">Meraki UI</h1>
+            <h1 class="px-2 text-sm">Data Science Engineer</h1>
           </div>
 
           <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -76,7 +75,7 @@ const About = () => {
               />
             </svg>
 
-            <h1 class="px-2 text-sm">California</h1>
+            <h1 class="px-2 text-sm">Mumbai</h1>
           </div>
 
           <div class="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -93,7 +92,7 @@ const About = () => {
               />
             </svg>
 
-            <h1 class="px-2 text-sm">patterson@example.com</h1>
+            <h1 class="px-2 text-sm">karmankkhan@gmail.com</h1>
           </div>
         </div>
       </div>
