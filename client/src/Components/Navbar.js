@@ -85,9 +85,7 @@ export default function Navbars() {
             variant="small"
             className="mr-4 cursor-pointer py-1.5 font-normal"
           >
-            <span className="text-cyan-900 font-semibold">
-              Attandance Maneger
-            </span>
+            <span className="text-cyan-900 font-extrabold">Attandance</span>
           </Typography>
         </Link>
 

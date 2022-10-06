@@ -50,61 +50,6 @@ const AttandanceShhet = () => {
     bg-[#243b55]   "
     >
       <section className="lg:py-20 lg:px-16 capitalize  rounded shadow-md shadow-blue-gray-800">
-        {/* <form>
-        <label
-          for="default-search"
-          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-        >
-          Search
-        </label>
-        <button
-          onClick={() => setmodel(true)}
-          for="default-search"
-          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-        >
-          Add
-        </button>
-        <div class="relative">
-          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg
-              aria-hidden="true"
-              class="w-5 h-5 text-gray-500 dark:text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              ></path>
-            </svg>
-          </div>
-          <input
-            type="search"
-            id="default-search"
-            class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search by usernmae"
-            required=""
-          />
-          <button
-            type="submit"
-            class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Search
-          </button>
-        </div>
-        <button
-          type="button"
-          onClick={() => setmodel(true)}
-          class="text-white bg-red-900  absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Search
-        </button>
-      </form> */}
-
         <button
           onClick={() => setmodel(true)}
           class="bg-white   hover:bg-gray-800 text-gray-900 z-0 font-bold py-2 px-4 rounded inline-flex items-center"
@@ -270,7 +215,7 @@ const AttandanceShhet = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                       />
                     </svg>
                   </span>
@@ -295,7 +240,7 @@ const AttandanceShhet = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                       />
                     </svg>
                   </span>
@@ -320,7 +265,7 @@ const AttandanceShhet = () => {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                       />
                     </svg>
                   </span>
