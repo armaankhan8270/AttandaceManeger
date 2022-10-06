@@ -11,14 +11,13 @@ const SearchByroll = () => {
       await axios.get(geturl).then((e) => {
         setData(e.data);
         console.log(e.data);
-        setupdate(update + 1);
       });
     };
     getData();
   }, [update]);
   return (
-    <div>
-      <div class="relative">
+    <div className="lg:p-12 bg-gray-900">
+      <div class="relative ">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
           <svg
             aria-hidden="true"
@@ -49,7 +48,8 @@ const SearchByroll = () => {
           }}
         />
         <button
-          type="submit"
+          // type="button"
+          onClick={() => setupdate(update + 1)}
           class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Search
@@ -57,39 +57,39 @@ const SearchByroll = () => {
       </div>
       <table class="t">
         <thead>
-          <tr className="border-2 min-w-screen justify-between border-gray-800">
-            <th className="bg-cyan-700">RollNo</th>
-            <th className="bg-cyan-600">Date</th>
-            <th className="bg-cyan-500">Ai</th>
-            <th className="bg-cyan-400">Dwm</th>
-            <th className="bg-cyan-300">Wc</th>
-            <th className="bg-cyan-200">Stats</th>
-            <th>Cn</th>
+          <tr className="border-2 text-white min-w-screen justify-between border-gray-800">
+            <th className="bg-indigo-900">RollNo</th>
+            <th className="bg-indigo-900">Date</th>
+            <th className="bg-indigo-900">Ai</th>
+            <th className="bg-indigo-900">Dwm</th>
+            <th className="bg-indigo-900">Wc</th>
+            <th className="bg-indigo-900">Stats</th>
+            <th className="bg-indigo-900">Cn</th>
           </tr>
         </thead>
         <tbody>
           {Data?.map((item, ind) => {
             return (
               <tr className="text-white">
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
+                <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                   {item.roll}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-400">
+                <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                   {item.day}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-300">
+                <td className="lg:w-44 sm:w-12 p-3 border- border-0 shadow-sm bg-white text-black">
                   {item.Ai}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-700">
+                <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                   {item.Dwm}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-600">
+                <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                   {item.Wc}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
+                <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                   {item.Cn}
                 </td>
-                <td className="lg:w-44 sm:w-12 p-3 border-2 border-cyan-900 shadow-sm bg-teal-500">
+                <td className="lg:w-44 sm:w-12 p-3 border2 border-0 shadow-sm bg-white text-black">
                   {item.Stats}
                 </td>
               </tr>

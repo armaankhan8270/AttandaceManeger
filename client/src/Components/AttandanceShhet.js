@@ -19,7 +19,7 @@ const AttandanceShhet = () => {
       await axios.get(geturl).then((e) => {
         setData(e.data);
         console.log(e.data);
-        setupdate(update + 1);
+        // setupdate(update + 1);
       });
     };
     getData();

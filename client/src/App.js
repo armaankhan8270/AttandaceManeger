@@ -10,8 +10,17 @@ import Faq from "./Components/Faq";
 import About from "./Components/About";
 import AttandanceShhet from "./Components/AttandanceShhet";
 import SearchByroll from "./Components/SearchByroll";
+import { GlobalUserContetx } from "./Context/UserContext";
 
 function App() {
+  const {
+    UserLogin,
+    setUserLogin,
+    UserLogout,
+    setUserLogout,
+    NameOfUser,
+    setNameOfUser,
+  } = GlobalUserContetx();
   return (
     <BrowserRouter>
       <div className="">
@@ -21,10 +30,16 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Index />} />
-          <Route path="/faq" element={<Faq />} />
+          <Route path="/faq" element={UserLogin ? <Faq /> : <Login />} />
           <Route path="/about" element={<About />} />
-          <Route path="/attendance" element={<AttandanceShhet />} />
-          <Route path="/search" element={<SearchByroll />} />
+          <Route
+            path="/attendance"
+            element={UserLogin ? <AttandanceShhet /> : <Login />}
+          />
+          <Route
+            path="/search"
+            element={UserLogin ? <SearchByroll /> : <Login />}
+          />
 
           {/* <Route path="/nav" element={<Navbar />} /> */}
         </Routes>

@@ -7,8 +7,10 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { GlobalUserContetx } from "../Context/UserContext";
 
 export default function Navbars() {
+  const { NameOfUser } = GlobalUserContetx();
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
@@ -58,6 +60,16 @@ export default function Navbars() {
       >
         <Link to="/faq" className="flex items-center">
           Docs
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal captalize capitalize"
+      >
+        <Link to="/faq" className="flex items-center">
+          Welcome {NameOfUser}
         </Link>
       </Typography>
     </ul>

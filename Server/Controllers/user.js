@@ -48,7 +48,7 @@ export const Login = async (req, res, next) => {
     res
       //   .cookie("access_token", token, { httpOnly: true })
       //   .status(201)
-      .json("welcome" + " " + req.body.username);
+      .json(username);
   } catch (err) {
     next(err.message);
     console.log(err.message);

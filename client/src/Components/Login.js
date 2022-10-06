@@ -5,8 +5,14 @@ import Success from "./Success";
 import { GlobalUserContetx } from "../Context/UserContext";
 
 const Login = () => {
-  const { UserLogin, setUserLogin, UserLogout, setUserLogout } =
-    GlobalUserContetx();
+  const {
+    UserLogin,
+    setUserLogin,
+    UserLogout,
+    setUserLogout,
+    NameOfUser,
+    setNameOfUser,
+  } = GlobalUserContetx();
   const [err, seterr] = useState(false);
   const [success, setsuccess] = useState(false);
   const [email, setemail] = useState("");
@@ -20,10 +26,11 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         setsuccess(true);
-        setUserLogin(true);
+        setUserLogin("True");
+        setNameOfUser(data.data);
       })
       .catch((e) => seterr(true));
-    setUserLogin(false);
+    // setUserLogin(false);
     setTimeout(() => {
       setsuccess(false);
       seterr(false);
