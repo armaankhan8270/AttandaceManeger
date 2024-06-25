@@ -5,7 +5,8 @@ const UserContext = createContext();
 export const StateUserContetx = ({ children }) => {
   const [UserLogin, setUserLogin] = useState(false);
   const [UserLogout, setUserLogout] = useState(true);
-  const [NameOfUser, setNameOfUser] = useState("");
+  const [NameOfUser, setNameOfUser] = useState("armaan");
+  const [subjects, setSubjects] = useState([]);
   return (
     <UserContext.Provider
       value={{
@@ -15,6 +16,8 @@ export const StateUserContetx = ({ children }) => {
         setUserLogout,
         NameOfUser,
         setNameOfUser,
+        subjects,
+        setSubjects,
       }}
     >
       {children}

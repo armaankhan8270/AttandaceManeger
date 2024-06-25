@@ -5,6 +5,7 @@ import cors from "cors";
 import UserRouter from "./Routes/User.js";
 // import bodyParser from "body-parser";
 import AddRouter from "./Routes/Attandance.js";
+import AttandanceRouter from "./Routes/Attendance.js";
 
 app.use(express.json());
 // app.use(bodyParser.json());
@@ -37,6 +38,8 @@ app.use(cors());
 
 app.use("/user", UserRouter);
 app.use("/attandance", AddRouter);
+app.use("/api", AttandanceRouter);
+
 app.listen(3002, (req, res) => {
-  console.log("server is running on 3001");
+  console.log("server is running on 3002");
 });

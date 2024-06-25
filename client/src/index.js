@@ -6,7 +6,9 @@ import { StateUserContetx } from "./Context/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <StateUserContetx>
-    <App />
-  </StateUserContetx>
+  <React.StrictMode>
+    <StateUserContetx>
+      <App />
+    </StateUserContetx>
+  </React.StrictMode>
 );

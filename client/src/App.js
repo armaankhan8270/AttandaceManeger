@@ -12,6 +12,10 @@ import AttandanceShhet from "./Components/AttandanceShhet";
 import SearchByroll from "./Components/SearchByroll";
 import { GlobalUserContetx } from "./Context/UserContext";
 import Help from "./Components/Help";
+import AttendanceForm from "./Components/AttendaceForm";
+import AttendanceTable from "./Components/AttendanceTable";
+import { Dashboard } from "@material-ui/icons";
+import Profile from "./pages/profile";
 
 function App() {
   const {
@@ -30,13 +34,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Index />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/faq" element={UserLogin ? <Faq /> : <Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/add" element={<AttendanceForm />} />
+          <Route path="/show" element={<AttendanceTable />} />
+          <Route path="/dash" element={<Dashboard />} />
           <Route
             path="/attendance"
-            element={UserLogin ? <AttandanceShhet /> : <Login />}
+            element={UserLogin ? <AttendanceTable /> : <Login />}
           />
           <Route
             path="/search"

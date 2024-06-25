@@ -72,6 +72,16 @@ export default function Navbars() {
           Help
         </Link>
       </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <Link to="/profile" className="flex items-center">
+          Profile
+        </Link>
+      </Typography>
     </ul>
   );
 
@@ -79,18 +89,6 @@ export default function Navbars() {
     <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Link to="/attendance">
-          <Typography
-            as="a"
-            to="/"
-            variant="small"
-            className="mr-4 cursor-pointer py-1.5 font-normal"
-          >
-            <span className="text-cyan-900 font-extrabold">Attandance</span>
-          </Typography>
-        </Link>
-
-        <div className="hidden lg:block">{navList}</div>
-        <Link to="/search">
           <Button
             variant="gradient"
             size="sm"
@@ -99,6 +97,17 @@ export default function Navbars() {
             <span>Attandance</span>
           </Button>
         </Link>
+
+        <div className="hidden lg:block">{navList}</div>
+        {/* <Link to="/search">
+          <Button
+            variant="gradient"
+            size="sm"
+            className="hidden lg:inline-block"
+          >
+            <span>Attandance</span>
+          </Button>
+        </Link> */}
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"

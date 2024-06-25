@@ -3,6 +3,7 @@ import axios from "axios";
 import Error from "./Error";
 import Success from "./Success";
 import { GlobalUserContetx } from "../Context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -12,12 +13,15 @@ const Login = () => {
     setUserLogout,
     NameOfUser,
     setNameOfUser,
+    subjects,
+    setSubjects,
   } = GlobalUserContetx();
   const [err, seterr] = useState(false);
   const [success, setsuccess] = useState(false);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
+  const navigate = useNavigate();
   const Login = async (e) => {
     e.preventDefault();
     const url = `http://localhost:3002/user/login`;
@@ -27,7 +31,10 @@ const Login = () => {
         console.log(data);
         setsuccess(true);
         setUserLogin("True");
-        setNameOfUser(data.data);
+        setNameOfUser(data.data.username);
+        console.log(data.data.username);
+        navigate("/add");
+        setSubjects(data.data.subjects);
       })
       .catch((e) => seterr(true));
     // setUserLogin(false);

@@ -1,45 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Error from "./Error";
 import Success from "./Success";
 
 const Register = () => {
-  const [username, setusername] = useState("");
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const [profileImg, setprofileImg] = useState("");
-  const [err, seterr] = useState(false);
-  const [Message, setMessage] = useState("");
-  const [success, setsuccess] = useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [profileImg, setProfileImg] = useState("");
+  const [subjects, setSubjects] = useState("");
+  const [err, setErr] = useState(false);
+  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
-  const Post = async (e) => {
+  const post = async (e) => {
     e.preventDefault();
+    const subjectsArray = subjects.split(",").map((subject) => subject.trim());
     const url = `http://localhost:3002/user/register`;
     await axios
-      .post(url, { username, email, password, profileImg })
+      .post(url, { username, email, password, profileImg, subjectsArray })
       .then((data) => {
         console.log(data);
-        // alert("user created");
-        setsuccess(true);
-        setpassword("");
-        setusername("");
-        setemail("");
+        setSuccess(true);
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setProfileImg("");
+        setSubjects("");
       })
       .catch((e) => {
         console.log(e.response.data);
         setMessage(e.response.data);
-        seterr(true);
+        setErr(true);
       });
     setTimeout(() => {
-      setsuccess(false);
-      seterr(false);
+      setSuccess(false);
+      setErr(false);
     }, 2000);
   };
 
   return (
     <div>
-      {success ? <Success message={"Succesfully Registered"} /> : ""}
-      {err ? <Error error={Message} /> : ""}
+      {success ? <Success message={"Successfully Registered"} /> : ""}
+      {err ? <Error error={message} /> : ""}
       <section className="bg-white dark:bg-gray-900">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
           <form className="w-full max-w-md">
@@ -77,7 +80,7 @@ const Register = () => {
               <input
                 type="text"
                 value={username}
-                onChange={(e) => setusername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
                 className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
               />
@@ -103,7 +106,7 @@ const Register = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setemail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
               />
@@ -128,15 +131,41 @@ const Register = () => {
               <input
                 type="password"
                 value={password}
-                onChange={(e) => setpassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
               />
             </div>
 
+            <div className="relative flex items-center mt-4">
+              <span className="absolute">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="text"
+                value={subjects}
+                onChange={(e) => setSubjects(e.target.value)}
+                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                placeholder="Subjects (comma separated)"
+              />
+            </div>
+
             <div className="mt-6">
               <button
-                onClick={Post}
+                onClick={post}
                 className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
               >
                 Sign Up
