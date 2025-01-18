@@ -5,20 +5,31 @@ import bcrypt from "bcryptjs";
 // import uuid4 from "uuidv4"; // Not used in this snippet
 
 export const Register = async (req, res, next) => {
-  // code for hashing password
+  console.log("resgistering");
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(req.body.password, salt);
+
   try {
+    // Log the incoming request body for debugging
+    console.log("Request Body:", req.body);
+
+    // Ensure subjects is an array
+    const subjects = Array.isArray(req.body.subjects)
+      ? req.body.subjects
+      : [req.body.subjects];
+
     const newUser = new User({
       username: req.body.username,
       email: req.body.email,
       password: hash,
-      subjects: req.body.subjects, // include subjects
+      subjects: subjects, // Ensure this is handled as an array
     });
+
     await newUser.save();
-    res.send(req.body);
+    res.status(201).send(newUser); // Send the created user as a response
   } catch (err) {
-    next(err.message.data);
+    console.error(err); // Log the error for debugging
+    next(err); // Pass the full error object to the error handler
   }
 };
 

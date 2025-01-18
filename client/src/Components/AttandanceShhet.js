@@ -19,6 +19,7 @@ const AttendanceSheet = () => {
   const { NameOfUser, subjects } = GlobalUserContetx();
 
   useEffect(() => {
+    //http://localhost:3002/attandance/All
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -48,7 +49,10 @@ const AttendanceSheet = () => {
     const attendanceData = { ...formData, NameOfUser };
 
     try {
-      await axios.post(`http://localhost:3002/attandance/add`, attendanceData);
+      await axios.post(
+        `http://localhost:3002/attandance/add`,
+        attendanceData
+      );
       setUpdateCount(updateCount + 1);
     } catch (error) {
       console.error(error.response.data);

@@ -1,10 +1,30 @@
-import Attendance from "../models/Attendance.js";
+import Attendance from "../Models/Attendance.js";
 
 // Add attendance record
 export const addAttendance = async (req, res) => {
   const { userName, attendanceRecords } = req.body;
 
   try {
+
+      // Check for existing attendance records
+      const existingRecords = await Attendance.find({
+        userName,
+        'attendanceRecords.subject': { $in: Object.keys(attendanceRecords) },
+      });
+  
+      const duplicateSubjects = existingRecords
+        .flatMap(record => record.attendanceRecords)
+        .filter(({ subject, status }) => 
+          attendanceRecords[subject] === status
+        )
+        .map(({ subject }) => subject);
+  
+      if (duplicateSubjects.length > 0) {
+        return res.status(409).json({
+          message: "Attendance record already exists for the following subjects",
+          duplicates: duplicateSubjects,
+        });
+      }
     const newAttendance = new Attendance({
       userName,
       subjects: Object.keys(attendanceRecords),

@@ -2,18 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Pie, Bar } from "react-chartjs-2";
 import "chart.js/auto";
+import { GlobalUserContetx } from "../Context/UserContext";
 
 const Dashboard = () => {
   const [attendanceData, setAttendanceData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [subjectFilter, setSubjectFilter] = useState("All");
-
+  const { NameOfUser } = GlobalUserContetx();
   useEffect(() => {
     const fetchAttendanceData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3002/api/attendance/check2"
+          `http://localhost:3002/api/attendance/${NameOfUser}`
         );
         setAttendanceData(response.data.data);
         setLoading(false);

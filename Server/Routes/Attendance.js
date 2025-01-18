@@ -6,8 +6,7 @@ import {
   getAttendanceByName,
   updateAttendanceByName,
   deleteAttendanceByName,
-} from "../controllers/Attendancesheet.js"; // Adjusted import path and function names
-
+} from "../Controllers/Attendancesheet.js"; // Adjusted import path and function names
 const router = express.Router();
 
 // Route to add attendance record

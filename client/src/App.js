@@ -16,6 +16,7 @@ import AttendanceForm from "./Components/AttendaceForm";
 import AttendanceTable from "./Components/AttendanceTable";
 import { Dashboard } from "@material-ui/icons";
 import Profile from "./pages/profile";
+import HomePage from "./Components/Hero";
 
 function App() {
   const {
@@ -31,14 +32,14 @@ function App() {
       <div className="">
         <Navbars />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/faq" element={UserLogin ? <Faq /> : <Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/add" element={<AttendanceForm />} />
+          <Route path="/add" element={UserLogin ?<AttendanceForm />: <Login />} />
           <Route path="/show" element={<AttendanceTable />} />
           <Route path="/dash" element={<Dashboard />} />
           <Route
@@ -47,7 +48,7 @@ function App() {
           />
           <Route
             path="/search"
-            element={UserLogin ? <SearchByroll /> : <Login />}
+            element={UserLogin ? <SearchByroll /> : <SearchByroll />}
           />
 
           {/* <Route path="/nav" element={<Navbar />} /> */}

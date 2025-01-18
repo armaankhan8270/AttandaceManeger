@@ -3,7 +3,7 @@ import axios from "axios";
 import Error from "./Error";
 import Success from "./Success";
 import { GlobalUserContetx } from "../Context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -18,8 +18,8 @@ const Login = () => {
   } = GlobalUserContetx();
   const [err, seterr] = useState(false);
   const [success, setsuccess] = useState(false);
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setemail] = useState("Sample@1234");
+  const [password, setpassword] = useState("123456");
 
   const navigate = useNavigate();
   const Login = async (e) => {
@@ -33,7 +33,7 @@ const Login = () => {
         setUserLogin("True");
         setNameOfUser(data.data.username);
         console.log(data.data.username);
-        navigate("/add");
+        navigate("/attendance");
         setSubjects(data.data.subjects);
       })
       .catch((e) => seterr(true));
@@ -109,12 +109,12 @@ const Login = () => {
             Don't have an account?{" "}
           </span>
 
-          <a
-            href="/register"
+          <Link
+            to="/register"
             class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
           >
             Register
-          </a>
+          </Link>
         </div>
       </div>
     </div>

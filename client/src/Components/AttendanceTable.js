@@ -12,14 +12,20 @@ import {
   Box,
   CircularProgress,
   Container,
+  Button
 } from "@mui/material";
 import Dashboard from "./DashBoard";
 import { GlobalUserContetx } from "../Context/UserContext";
+import { useNavigate } from "react-router-dom";
+
+
 
 const AttendanceTable = () => {
   const { NameOfUser } = GlobalUserContetx();
   const [attendanceData, setAttendanceData] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAttendanceData = async () => {
@@ -48,6 +54,14 @@ const AttendanceTable = () => {
 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-gray-700 text-white min-h-screen p-8">
+      <Button
+  variant="contained"
+  color="primary"
+  onClick={() => navigate("/add")}
+  sx={{ mb: 4 }}
+>
+  Add Attendance for Today
+</Button>
       <Container className="my-6">
         <Typography
           variant="h4"
